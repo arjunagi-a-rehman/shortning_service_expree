@@ -1,0 +1,31 @@
+{
+  "name": "short-url-service-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "geoip-lite2": "^2.1.27",
+    "http-status-codes": "^2.3.0",
+    "iso-3166-1-alpha-2": "^1.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.1",
+    "murmurhash": "^2.0.1",
+    "request-ip": "^3.3.0",
+    "validator": "^13.11.0"
+  }
+}
