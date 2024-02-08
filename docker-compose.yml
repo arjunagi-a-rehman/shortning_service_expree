@@ -1,0 +1,13 @@
+services:
+  my-node-express-app:
+    image: abdul12527/sus9:v1
+    ports:
+      - "8080:8080"  # Change the port mapping to match the PORT environment variable
+    environment:
+      - PORT=8080
+      - MONGO_URL=mongo url
+      - BASE_URL=https://sus9.in
+      - JWT_SECRET=2345678werty
+      - JWT_LIFETIME=1d
+      - NODE_ENV=dev
+      - FRONT_END_DOAMIN=http://localhost:3000

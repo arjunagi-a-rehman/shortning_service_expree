@@ -1,20 +1,20 @@
-# Fetching the minified node image on apline linux
-FROM node:slim
+# Use Node 16 alpine as parent image
+FROM node:16-alpine
 
-# Declaring env
-ENV NODE_ENV development
+# Change the working directory on the Docker image to /app
+WORKDIR /app
 
-# Setting up the work directory
-WORKDIR /express-docker
+# Copy package.json and package-lock.json to the /app directory
+COPY package.json package-lock.json ./
 
-# Copying all the files in our project
-COPY . .
-
-# Installing dependencies
+# Install dependencies
 RUN npm install
 
-# Starting our application
-CMD [ "node", "index.js" ]
+# Copy the rest of project files into this image
+COPY . .
 
-# Exposing server port
-EXPOSE 5000
+# Expose application port
+EXPOSE 8080
+
+# Start the application
+CMD npm start

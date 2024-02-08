@@ -22,7 +22,12 @@ async function genearteShortUrl(userId,longUrl,expiryDateTime){
   }
   const shortCode=await generateShortUrlCode(longUrl);
   const shortUrl=`${process.env.BASE_URL}/${shortCode}`;
-  if (expiryDateTime && expiryDateTime instanceof Date && !isNaN(expiryDateTime)) {
+  if (expiryDateTime) {
+    try {
+      expiryDateTime=new Date(expiryDateTime);
+    } catch (error) {
+      expiryDateTime = new Date();
+    }
     if (expiryDateTime.getTime() < Date.now()) {
       expiryDateTime = new Date(); // Current date and time
       expiryDateTime.setDate(expiryDateTime.getDate() + 1); // Add one day
